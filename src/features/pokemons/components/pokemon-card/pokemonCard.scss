@@ -1,0 +1,85 @@
+.poke-card {
+    &__img {
+        display: block;
+        height: 125px;
+        width: 125px;
+        margin: auto;
+        border: 3px solid purple;
+
+        &:hover {
+            transition: 1s;
+            box-shadow: 0 0 5px purple;
+        }
+    }
+
+    &__container {
+        text-align: center;
+        width: 33%;
+        &_theme-missing-pokemon {
+            width: 100%;
+        }
+        &_theme-catch-button {
+            height: 25%;
+            max-height: 25%;
+        }
+    }
+
+    &__catch-button {
+        color: #3d3d3d;
+        font-size: 1.25rem;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        transition: 0.2s;
+        background: linear-gradient(to bottom, red 55%, white 45%);
+        border: 2px solid black;
+
+        &:hover:not(:disabled) {
+            font-size: 1.5rem;
+            animation: notCatched;
+            animation-iteration-count: infinite;
+            animation-duration: 2s;
+            animation-delay: 0;
+            animation-timing-function: linear;
+            cursor: pointer;
+        }
+
+        &:disabled {
+            transition: 1s;
+            background: rgb(193, 236, 193);
+        }
+    }
+
+    &__stat-para {
+        text-align: center;
+        padding: 0 5px 0;
+    }
+}
+
+@keyframes notCatched {
+    from {
+        width: 75px;
+        height: 75px;
+        transform: rotate(0deg);
+    }
+    50% {
+        width: 90px;
+        height: 90px;
+        transform: rotate(180deg);
+    }
+
+    to {
+        width: 75px;
+        height: 75px;
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .poke-card {
+        &__img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
