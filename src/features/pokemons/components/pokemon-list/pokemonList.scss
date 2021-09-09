@@ -1,0 +1,31 @@
+.poke-card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
+    text-align: center;
+
+    margin: auto auto 1%;
+    border: 3px solid red;
+    border-radius: 10px;
+
+    height: 200px;
+    max-height: 200px;
+    width: 60%;
+    transition: 1s;
+    &_theme-catched {
+        transition: 1s;
+        border: 3px solid rgb(0, 255, 21);
+        box-shadow: 0 0 5px rgb(0, 255, 21);
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .poke-card {
+        display: flex;
+        flex-flow: column wrap;
+        width: 70%;
+        height: 320px;
+        max-height: 320px;
+    }
+}
